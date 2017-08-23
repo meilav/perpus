@@ -42,7 +42,7 @@
             <button class="btn btn-danger" style="margin:3px;"><i class="fa fa-close"> Delete </i></button>
             <button class="btn btn-warning" style="margin:3px;"><i class="fa fa-print"> Print </i></button></td>
       </tr>
-      <?php	} ?>
+      <?php } ?>
 
     </table>
   </div>
@@ -52,38 +52,34 @@
     <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <p> <h3>Tambah Data Buku</h3> </p>
         </div>
         <div class="modal-body">
-		  <form class="form-horizontal" action="#">
-		    <div class="form-group">
-		      <label class="control-label col-sm-2" for="judul">Judul:</label>
-		      <div class="col-sm-10">
-		        <input type="text" class="form-control" id="judul" placeholder="Masukkan Judul Buku" name="judul">
-		      </div>
-		    </div>
-		    <div class="form-group">
-		      <label class="control-label col-sm-2" for="penerbit">Penerbit:</label>
-		      <div class="col-sm-10">          
-		        <input type="text" class="form-control" id="penerbit" placeholder="Masukkan Penerbit" name="penerbit">
-		      </div>
-		    </div>
-		    <div class="form-group">
-		      <label class="control-label col-sm-2" for="pengarang">Pengarang:</label>
-		      <div class="col-sm-10">          
-		        <input type="text" class="form-control" id="pengarang" placeholder="Masukkan Pengarang" name="pengarang">
-		      </div>
-		    </div>
-		    <div class="form-group">        
-		      <div class="col-sm-offset-2 col-sm-10">
-		        <button type="submit" class="btn btn-default">Tambah</button>
-		      </div>
-		    </div>
-		  </form>
+        <form class="form-horizontal" action="perpustakaan/list_data" method="POST">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="judul">Judul:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="judul" placeholder="Masukkan Judul Buku" name="judul">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="penerbit">Penerbit:</label>
+              <div class="col-sm-10">          
+                <input type="text" class="form-control" id="penerbit" placeholder="Masukkan Penerbit" name="penerbit">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="pengarang">Pengarang:</label>
+              <div class="col-sm-10">          
+                <input type="text" class="form-control" id="pengarang" placeholder="Masukkan Pengarang" name="pengarang">
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"> Tutup</i></button>
+          <button type="submit" class="btn btn-default" id="TambahData">Tambah</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
