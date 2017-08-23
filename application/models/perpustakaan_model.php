@@ -6,7 +6,8 @@ class perpustakaan_model extends CI_Model {
 		$kd_buku = "kd_buku",
 		$judul = "judul",
 		$penerbit = "penerbit",
-		$pengarang = "pengarang";
+		$pengarang = "pengarang",
+		$harga = "harga";
 
 	public function tambah($data){
 		return $this->db->insert($table,$data);

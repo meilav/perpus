@@ -1,5 +1,5 @@
 #write your project folder name as rewritebase
-RewriteBase /codeigniter
+RewriteBase /perpus/
 
 RewriteEngine On
 RewriteCond %{REQUEST_URI} ^/system.*

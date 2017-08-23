@@ -4,11 +4,11 @@
         <div class="col-lg-6">
           <h2>Selamat Datang</h2>
           <p>Aplikasi Perpustakaan</p>
-          <button class="btn btn-primary">Start</button>
-        </div>        
+          <a class="btn btn-primary" href="#daftar">Start</a>
+        </div> 
         <div class="col-lg-6">
           <center>
-            <img class="img img-circle" width="70%" height="60%" src="assets/img/bolupandan.jpg">
+            <img class="img img-circle" width="50%" height="50%" src="assets/img/bookworm.jpg">
           </center>
         </div>
       </div>
@@ -20,67 +20,68 @@
           <h2 style="text-align:center">DAFTAR BUKU</h2>
       </div>
     </div>
-
-    <button type="button" class="btn btn-default" style="margin:5px;" data-toggle="modal" data-target="#sama">
+  <div class="container" id="daftar">
+    <a onclick="tambah_data()" class="btn btn-default" style="margin:5px;">
       <i class="fa fa-plus"> Tambah</i>
-    </button>
+    </a>
 
     <table class="table table-stripped">
+    <thead>
       <tr>
+        <th>No.</th>
         <th>Judul</th>
         <th>Penerbit</th>
         <th>Pengarang</th>
+        <th>Harga</th>
         <th>Aksi</th>
       </tr>
-      <?php foreach ($databuku as $key => $value) { ?>
-      <tr>
-        <td><?= $value->judul; ?></td>
-        <td><?= $value->pengarang; ?></td>
-        <td><?= $value->penerbit; ?></td>
-
-         <td><button class="btn btn-primary" style="margin:3px;"><i class="fa fa-edit"> Edit </i></button>
-            <button class="btn btn-danger" style="margin:3px;"><i class="fa fa-close"> Delete </i></button>
-            <button class="btn btn-warning" style="margin:3px;"><i class="fa fa-print"> Print </i></button></td>
-      </tr>
-      <?php } ?>
-
+    </thead>
+    <tbody id="listdata">      
+    </tbody>
     </table>
   </div>
   
-
+<!-- modal tambah -->
   <div class="modal fade" id="sama" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <p> <h3>Tambah Data Buku</h3> </p>
+          <p> <h3 class="modal-title">Tambah Data Buku</h3> </p>
         </div>
         <div class="modal-body">
-        <form class="form-horizontal" action="perpustakaan/list_data" method="POST">
+        <form id="form_modal" class="form-horizontal" method="POST">
+            <input type="hidden" name="kd_buku">
             <div class="form-group">
-              <label class="control-label col-sm-2" for="judul">Judul:</label>
+              <label class="control-label col-sm-2" for="judul">Judul</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="judul" placeholder="Masukkan Judul Buku" name="judul">
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="penerbit">Penerbit:</label>
+              <label class="control-label col-sm-2" for="penerbit">Penerbit</label>
               <div class="col-sm-10">          
                 <input type="text" class="form-control" id="penerbit" placeholder="Masukkan Penerbit" name="penerbit">
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="pengarang">Pengarang:</label>
+              <label class="control-label col-sm-2" for="pengarang">Pengarang</label>
               <div class="col-sm-10">          
                 <input type="text" class="form-control" id="pengarang" placeholder="Masukkan Pengarang" name="pengarang">
               </div>
             </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="harga">Harga</label>
+              <div class="col-sm-10">          
+                <input type="number" class="form-control" id="harga" placeholder="Masukkan Harga" name="harga">
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-default" id="TambahData">Tambah</button>
+          <button class="btn btn-default" onclick="save()">Simpan</button>
         </div>
         </form>
       </div>
     </div>
   </div>
-
+</div>
